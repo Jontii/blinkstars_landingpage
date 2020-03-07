@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/blinkstars/static/css/main.5f361e03.chunk.css",
-    "main.js": "/blinkstars/static/js/main.adf5a37d.chunk.js",
-    "main.js.map": "/blinkstars/static/js/main.adf5a37d.chunk.js.map",
+    "main.js": "/blinkstars/static/js/main.0569d050.chunk.js",
+    "main.js.map": "/blinkstars/static/js/main.0569d050.chunk.js.map",
     "runtime-main.js": "/blinkstars/static/js/runtime-main.a2409600.js",
     "runtime-main.js.map": "/blinkstars/static/js/runtime-main.a2409600.js.map",
-    "static/js/2.29c16b7a.chunk.js": "/blinkstars/static/js/2.29c16b7a.chunk.js",
-    "static/js/2.29c16b7a.chunk.js.map": "/blinkstars/static/js/2.29c16b7a.chunk.js.map",
+    "static/js/2.ab02845f.chunk.js": "/blinkstars/static/js/2.ab02845f.chunk.js",
+    "static/js/2.ab02845f.chunk.js.map": "/blinkstars/static/js/2.ab02845f.chunk.js.map",
     "index.html": "/blinkstars/index.html",
-    "precache-manifest.8836b4bdc6153d275ec151f690e55c2c.js": "/blinkstars/precache-manifest.8836b4bdc6153d275ec151f690e55c2c.js",
+    "precache-manifest.fcb35c21f8a4acd53b6909697def78da.js": "/blinkstars/precache-manifest.fcb35c21f8a4acd53b6909697def78da.js",
     "service-worker.js": "/blinkstars/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/blinkstars/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.29c16b7a.chunk.js.LICENSE.txt": "/blinkstars/static/js/2.29c16b7a.chunk.js.LICENSE.txt"
+    "static/js/2.ab02845f.chunk.js.LICENSE.txt": "/blinkstars/static/js/2.ab02845f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a2409600.js",
-    "static/js/2.29c16b7a.chunk.js",
+    "static/js/2.ab02845f.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.adf5a37d.chunk.js"
+    "static/js/main.0569d050.chunk.js"
   ]
 }
