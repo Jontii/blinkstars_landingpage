@@ -36,7 +36,13 @@ const useStyles = makeStyles(theme => ({
         : theme.palette.grey[50],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    borderRadius: 10
+    borderRadius: 10,
+    [theme.breakpoints.down('xs')]: {
+      width: '90%',
+      minHeight: 200
+    },
+    width: '100%',
+    minHeight: 300
   },
   image3: {
     backgroundImage: 'url(https://source.unsplash.com/random?socialmedia)',
@@ -47,11 +53,25 @@ const useStyles = makeStyles(theme => ({
         : theme.palette.grey[50],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    borderRadius: 10
+    borderRadius: 10,
+    [theme.breakpoints.down('xs')]: {
+      width: '90%',
+      minHeight: 200
+    },
+    width: '100%',
+    minHeight: 300
   },
   avatar: {
     backgroundColor: '#3f51b5',
-    marginBottom: theme.spacing(3)
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: theme.spacing(1)
+    },
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: theme.spacing(2)
+    },
+    [theme.breakpoints.up('md')]: {
+      marginBottom: theme.spacing(3)
+    }
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -62,6 +82,15 @@ const useStyles = makeStyles(theme => ({
   },
   marginBottom: {
     marginBottom: theme.spacing(1)
+  },
+  textClass: {
+    marginBottom: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center'
+    },
+    [theme.breakpoints.up('md')]: {
+      textAlign: 'left'
+    }
   }
 }));
 
@@ -80,23 +109,23 @@ function App() {
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        style={{ marginLeft: '20%', maxWidth: 225 }}
-        mb={10}
+        alignItems={{ xs: 'center', md: 'normal' }}
+        ml={{ xs: 0, md: '20%' }}
+        style={{ maxWidth: 225 }}
+        mb={{ xs: 6, md: 10 }}
       >
         <Avatar className={classes.avatar}>{icon}</Avatar>
         <Typography
           component="h1"
           variant="h5"
-          align="left"
-          className={classes.marginBottom}
+          className={classes.textClass}
           style={{ color: '#524e86' }}
         >
           {headtext}
         </Typography>
         <Typography
           component="h5"
-          align="left"
-          className={classes.marginBottom}
+          className={classes.textClass}
           style={{ color: '#9c9ab1' }}
         >
           {text}
@@ -106,13 +135,19 @@ function App() {
   };
 
   const InfoFeatureComp = () => (
-    <Grid container className={classes.root}>
-      <Box pt={20} pb={20} display="flex">
-        <Grid item xs={false} sm={4} md={4}>
+    <Grid container>
+      <Box
+        flexDirection={{ xs: 'column', md: 'row' }}
+        pt={{ xs: 3, md: 15 }}
+        pb={{ xs: 1, md: 0 }}
+        display="flex"
+        alignItems={{ xs: 'center', md: 'normal' }}
+      >
+        <Grid item xs={false} sm={8} md={4}>
           <Typography
             variant="h5"
             component="h3"
-            align="left"
+            className={classes.textClass}
             style={{ color: '#6f7581', marginBottom: '1rem' }}
           >
             Always at service!
@@ -120,7 +155,7 @@ function App() {
           <Typography
             variant="h3"
             component="h1"
-            align="left"
+            className={classes.textClass}
             style={{ lineHeight: '130%', fontWeight: 700, color: '#403f52' }}
           >
             Splendid ideas for starting new business
@@ -137,11 +172,15 @@ function App() {
             Apply
           </Button>
         </Grid>
-        <Grid item xs={12} sm={8} md={8}>
-          {/* <div className={classes.paper}> */}
-          <Box display="flex" flexDirection="column">
-            <Grid item md={12}>
-              <Box display="flex" justifyContent="flex-end">
+        <Grid item xs={12} sm={12} md={8}>
+          <Box display="flex" flexDirection="column" mt={{ xs: 5, sm: 0 }}>
+            <Grid item xs={12} sm={12} md={12}>
+              <Box
+                display="flex"
+                flexDirection={{ xs: 'column', sm: 'row' }}
+                justifyContent={{ sm: 'space-evenly', md: 'flex-end' }}
+                alignItems={{ xs: 'center' }}
+              >
                 <Test
                   icon={<CreditCardIcon />}
                   headtext="Earn $"
@@ -154,8 +193,14 @@ function App() {
                 />
               </Box>
             </Grid>
-            <Grid item md={12}>
-              <Box display="flex" justifyContent="flex-end">
+            <Grid item xs={12} sm={12} md={12}>
+              <Box
+                display="flex"
+                flexDirection={{ xs: 'column', sm: 'row' }}
+                justifyContent={{ sm: 'space-evenly', md: 'flex-end' }}
+                alignItems={{ xs: 'center' }}
+              >
+                {' '}
                 <Test
                   icon={<LinkedInIcon />}
                   headtext="Start a brand"
@@ -169,22 +214,27 @@ function App() {
               </Box>
             </Grid>
           </Box>
-          {/* </div> */}
         </Grid>
       </Box>
     </Grid>
   );
 
   const AboutUs = () => (
-    <Grid container className={classes.root} spacing={2}>
-      <Box pb={20} display="flex" width="100%">
-        <Grid item xs={6} sm={5} md={5}>
-          <Box px={3}>
+    <Grid container spacing={2}>
+      <Box
+        pb={{ xs: 3, md: 20 }}
+        display="flex"
+        width="100%"
+        alignItems={{ xs: 'center', md: 'normal' }}
+        flexDirection={{ xs: 'column', md: 'row' }}
+      >
+        <Grid item xs={false} sm={8} md={5}>
+          <Box px={3} pb={{ xs: 2 }}>
             <Box mb={2}>
               <Typography
                 variant="h3"
                 component="h1"
-                align="left"
+                className={classes.textClass}
                 style={{
                   lineHeight: '130%',
                   fontWeight: 700,
@@ -197,7 +247,7 @@ function App() {
 
             <Typography
               variant="body1"
-              align="left"
+              className={classes.textClass}
               style={{ color: '#9c9ab1' }}
             >
               Blinkstars.com is a B2B marketing platform specialized in
@@ -221,22 +271,28 @@ function App() {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={6} sm={7} md={7} className={classes.image2}></Grid>
+        <Grid item xs={12} sm={8} md={7} className={classes.image2}></Grid>
       </Box>
     </Grid>
   );
 
   const Market = () => (
-    <Grid container component="main" className={classes.root} spacing={2}>
-      <Box pb={20} display="flex" width="100%">
-        <Grid item xs={6} sm={7} md={7} className={classes.image3}></Grid>
-
-        <Grid item xs={6} sm={5} md={5}>
-          <Box px={3}>
+    <Grid container spacing={2}>
+      <Box
+        pb={{ xs: 4, md: 20 }}
+        pt={{ xs: 4 }}
+        display="flex"
+        width="100%"
+        alignItems={{ xs: 'center', md: 'normal' }}
+        flexDirection={{ xs: 'column-reverse', md: 'row' }}
+      >
+        <Grid item xs={false} sm={8} md={7} className={classes.image3}></Grid>
+        <Grid item xs={12} sm={8} md={5}>
+          <Box px={3} pb={{ xs: 2 }} mb={{ xs: 2 }}>
             <Box mb={2}>
               <Typography
                 variant="h3"
-                align="left"
+                className={classes.textClass}
                 style={{
                   lineHeight: '130%',
                   fontWeight: 700,
@@ -247,7 +303,11 @@ function App() {
               </Typography>
             </Box>
 
-            <Typography variant="h6" align="left" style={{ color: '#9c9ab1' }}>
+            <Typography
+              variant="h6"
+              className={classes.textClass}
+              style={{ color: '#9c9ab1' }}
+            >
               85% of the people we've asked has seen a need for a B2B platform
               and would be interested. Something something the dark side...
             </Typography>
@@ -268,7 +328,7 @@ function App() {
           <Market />
           <footer style={{ backgroundColor: '#f7f7f7' }}>
             <Grid container>
-              <Grid item md={12}>
+              <Grid item xs={12}>
                 <Box
                   display="flex"
                   justifyContent="center"

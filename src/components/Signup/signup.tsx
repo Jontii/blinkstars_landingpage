@@ -1,23 +1,8 @@
-import { Box, Container, Fab, InputBase } from '@material-ui/core';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { Box, Fab, InputBase } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://blinkstars.com/">
-        Blinkstars.com
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,6 +34,25 @@ const useStyles = makeStyles(theme => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
+  },
+  header: {
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '4.7rem',
+      textAlign: 'center'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '6rem',
+      textAlign: 'left'
+    }
+  },
+  textClass: {
+    marginBottom: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center'
+    },
+    [theme.breakpoints.up('md')]: {
+      textAlign: 'left'
+    }
   }
 }));
 
@@ -57,8 +61,6 @@ export default function SignInSide() {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-
       <Grid
         item
         xs={12}
@@ -72,16 +74,12 @@ export default function SignInSide() {
         }}
         id="apply"
       >
-        {/* <Box my={10}> */}
-        {/* <Video /> */}
-        {/* <Box> */}
         <Box display="flex" justifyContent="center">
-          <Container>
+          <Grid container>
             <Grid item xs={12}>
               <Typography
                 variant="h1"
-                component="h1"
-                align="left"
+                className={classes.header}
                 style={{
                   lineHeight: '130%',
                   fontWeight: 700,
@@ -93,12 +91,15 @@ export default function SignInSide() {
               <Typography
                 variant="h3"
                 component="h3"
-                align="left"
+                className={classes.textClass}
                 style={{ color: '#FFF', marginBottom: '1rem' }}
               >
                 Make money as an B2B Influencer{' '}
               </Typography>
-              <Box display="flex" justifyContent="flex-start">
+              <Box
+                display="flex"
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+              >
                 <InputBase
                   required
                   style={{
@@ -124,53 +125,9 @@ export default function SignInSide() {
                 </Fab>
               </Box>
             </Grid>
-          </Container>
+          </Grid>
         </Box>
-        {/* </Box> */}
       </Grid>
-      {/* <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-        <LockOutlinedIcon />
-        </Avatar>
-        </Box>
-        <Typography component="h1" variant="h5">
-            Don't miss out - Apply now
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Apply
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  WE DON'T SHARE YOUR PERSONAL INFO WITH ANYONE | PRIVAT POLICY
-                </Link>
-              </Grid>
-            </Grid>
-            <Box mt={5}>
-              <Copyright />
-            </Box>
-          </form>
-        </div>
-      </Grid> */}
     </Grid>
   );
 }
