@@ -1,15 +1,17 @@
-import { Box, Fab, InputBase } from '@material-ui/core';
+import { Box, Fab } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
+
+import CustomTextField from '../CustomTextField/customtextfield';
 
 const useStyles = makeStyles(theme => ({
   root: {
     height: '100vh'
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random?business,people)',
+    backgroundImage: 'url(https://source.unsplash.com/oMpAz-DN-9I/1920x1080)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'dark'
@@ -17,23 +19,6 @@ const useStyles = makeStyles(theme => ({
         : theme.palette.grey[50],
     backgroundSize: 'cover',
     backgroundPosition: 'center'
-  },
-  paper: {
-    margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
   },
   header: {
     [theme.breakpoints.down('xs')]: {
@@ -98,25 +83,16 @@ export default function SignInSide() {
               </Typography>
               <Box
                 display="flex"
-                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                justifyContent={{
+                  xs: 'space-around',
+                  sm: 'center',
+                  md: 'flex-start'
+                }}
+                alignItems="center"
               >
-                <InputBase
-                  required
-                  style={{
-                    backgroundColor: 'white',
-                    borderRadius: 9999,
-                    padding: '0px 45px',
-                    marginRight: '1rem'
-                  }}
-                  id="email"
-                  name="email"
-                  placeholder="Enter you email"
-                  inputProps={{ 'aria-label': 'description' }}
-                  autoComplete="email"
-                  autoFocus
-                />
+                <CustomTextField />
                 <Fab
-                  style={{ minWidth: 100 }}
+                  style={{ minWidth: 130, marginLeft: '2rem' }}
                   color="primary"
                   aria-label="apply"
                   variant="extended"

@@ -1,5 +1,4 @@
 import { Box, Grid } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -9,73 +8,11 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import React from 'react';
 
+import Icon from '../Icon/Icon';
+
 const useStyles = makeStyles(theme => ({
-  root: {
-    height: '100vh'
-  },
-  image: {
-    backgroundImage: 'url(https://source.unsplash.com/random?business,people)',
-    backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'dark'
-        ? theme.palette.grey[900]
-        : theme.palette.grey[50],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    borderRadius: 10
-  },
-  image2: {
-    backgroundImage: 'url(https://source.unsplash.com/random?business)',
-    backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'dark'
-        ? theme.palette.grey[900]
-        : theme.palette.grey[50],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    borderRadius: 10,
-    [theme.breakpoints.down('xs')]: {
-      width: '90%',
-      minHeight: 200
-    },
-    width: '100%',
-    minHeight: 300
-  },
-  image3: {
-    backgroundImage: 'url(https://source.unsplash.com/random?socialmedia)',
-    backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'dark'
-        ? theme.palette.grey[900]
-        : theme.palette.grey[50],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    borderRadius: 10,
-    [theme.breakpoints.down('xs')]: {
-      width: '90%',
-      minHeight: 200
-    },
-    width: '100%',
-    minHeight: 300
-  },
-  image4: {
-    backgroundImage: 'url(https://source.unsplash.com/random?socialmedia)',
-    backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'dark'
-        ? theme.palette.grey[900]
-        : theme.palette.grey[50],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    [theme.breakpoints.down('xs')]: {
-      minHeight: 200
-    },
-    width: '100%',
-    minHeight: 300,
-    marginBottom: theme.spacing(15)
-  },
   avatar: {
-    backgroundColor: '#3f51b5',
+    display: 'flex',
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(1)
     },
@@ -86,15 +23,8 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(3)
     }
   },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
-  },
   submit: {
     margin: theme.spacing(3, 0, 2)
-  },
-  marginBottom: {
-    marginBottom: theme.spacing(1)
   },
   textClass: {
     marginBottom: theme.spacing(1),
@@ -126,7 +56,11 @@ const FeatureBox: React.FC<ITestProps> = ({ headtext, text, icon }) => {
       style={{ maxWidth: 225 }}
       mb={{ xs: 6, md: 10 }}
     >
-      <Avatar className={classes.avatar}>{icon}</Avatar>
+      <div className={`${classes.avatar} hi-icon-effect-2 hi-icon-effect-2a`}>
+        <div className="hi-icon">
+          <Icon iconOfChoice={icon} />
+        </div>
+      </div>{' '}
       <Typography
         component="h1"
         variant="h5"
@@ -150,7 +84,7 @@ const Agencies = () => {
   const classes = useStyles();
 
   return (
-    <Grid container>
+    <Grid container id="brandsagencies">
       <Box
         flexDirection={{ xs: 'column', md: 'row' }}
         pt={{ xs: 3, md: 0 }}
@@ -227,7 +161,7 @@ const Agencies = () => {
             style={{ marginTop: 54 }}
             href="#apply"
           >
-            Apply as Brand or Agency
+            Apply!
           </Button>
         </Grid>
       </Box>

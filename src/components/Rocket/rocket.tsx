@@ -3,23 +3,25 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
+import rocket from './rocket.png';
+
 const useStyles = makeStyles(theme => ({
-  image2: {
-    backgroundImage: 'url(https://source.unsplash.com/random?business)',
+  rocket: {
+    backgroundImage: `url(${rocket})`,
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'dark'
         ? theme.palette.grey[900]
         : theme.palette.grey[50],
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
     backgroundPosition: 'center',
-    borderRadius: 10,
     [theme.breakpoints.down('xs')]: {
-      width: '90%',
-      minHeight: 200
+      minHeight: 200,
+      marginTop: 0
     },
     width: '100%',
-    minHeight: 300
+    minHeight: 300,
+    marginTop: theme.spacing(8)
   },
   textClass: {
     marginBottom: theme.spacing(1),
@@ -32,11 +34,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const AboutUs = () => {
+const Rocket = () => {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={2} id="aboutus">
+    <Grid container spacing={2}>
       <Box
         pb={{ xs: 3, md: 20 }}
         display="flex"
@@ -57,7 +59,7 @@ const AboutUs = () => {
                   color: '#403f52'
                 }}
               >
-                The countdown starts now...
+                Prepare for takeoff
               </Typography>
             </Box>
 
@@ -66,31 +68,33 @@ const AboutUs = () => {
               className={classes.textClass}
               style={{ color: '#9c9ab1' }}
             >
-              Blinkstars.com is a B2B marketing platform specialized in
-              attracting great influencers and connecting them with companies.
+              Blinkstars is the opportunity you expected to increase your online
+              awareness immediately, as it puts brands in contact with
+              professional B2B influencers.
               <br />
               <br />
-              We are building the next generation of B2B Influencer Marketing
-              Services combined with new technology and human interactions.
+              By advertising on LinkedIn, brands can promote their content in an
+              easy and fully automatic way, since it is the influencers who are
+              responsible for doing so from blinkstars.com
               <br />
               <br />
-              e-fluencers-com is the first of its kind to bring Influencer
-              Marketing to the B2B industry. While Instagram influencer
-              marketing is expected to hit $8 billion in spend by 2020, the
-              growth trajectory of influencer marketing is not limited to
-              consumer brands.
+              It is no longer necessary to search for influencers on LinkedIn
+              who are willing to talk about your brand to promote it. Now,
+              thanks to Blinkstars, you can choose the profile of the
+              influencer, expert or a micro-influencer for your brand.
               <br />
               <br />
-              B2B companies are now realizing the value of collaborating with
-              influential experts for marketing purposes. This is what we do! We
-              influence your business, to grow!
+              To work with B2B influencers from the platform you just need to
+              register as an advertiser and in less than 5 minutes you can
+              create all the campaigns you want. All you need is to fill in the
+              information of your campaign.
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={8} md={7} className={classes.image2}></Grid>
+        <Grid item xs={12} sm={8} md={7} className={classes.rocket}></Grid>
       </Box>
     </Grid>
   );
 };
 
-export default AboutUs;
+export default Rocket;
