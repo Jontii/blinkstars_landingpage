@@ -1,7 +1,6 @@
-import { Box, Container, createStyles, Link, ListItem, ListItemText, makeStyles, Theme, useTheme } from '@material-ui/core';
+import { Box, Container, createStyles, Link, makeStyles, Theme } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
@@ -49,75 +48,75 @@ interface ResponsiveDrawerProps {
 const Navbar = (props: ResponsiveDrawerProps) => {
   const { content } = props;
   const classes = useStyles();
-  const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const theme = useTheme();
+  // const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  // const handleDrawerToggle = () => {
+  //   setMobileOpen(!mobileOpen);
+  // };
 
-  const drawer = (
-    <div>
-      <ListItem button>
-        <ListItemText>
-          <Typography
-            variant="h5"
-            // style={{ flewGrow: 1 }}
-            style={{ color: 'Black' }}
-          >
-            Logo
-          </Typography>
-        </ListItemText>
-      </ListItem>
-      <Divider />
+  // const drawer = (
+  //   <div>
+  //     <ListItem button>
+  //       <ListItemText>
+  //         <Typography
+  //           variant="h5"
+  //           // style={{ flewGrow: 1 }}
+  //           style={{ color: 'Black' }}
+  //         >
+  //           Logo
+  //         </Typography>
+  //       </ListItemText>
+  //     </ListItem>
+  //     <Divider />
 
-      <Box display="flex" flexDirection="column" style={{ color: 'black' }}>
-        <ListItem button>
-          <ListItemText>
-            <ScrollIntoView selector="#aboutus" smooth>
-              <Typography
-                id="#aboutus"
-                variant="subtitle2"
-                style={{ marginRight: 35, cursor: 'pointer' }}
-              >
-                <Link href="#aboutus" style={{ color: 'black' }}>
-                  About Us
-                </Link>
-              </Typography>
-            </ScrollIntoView>
-          </ListItemText>
-        </ListItem>
-        <Divider />
+  //     <Box display="flex" flexDirection="column" style={{ color: 'black' }}>
+  //       <ListItem button>
+  //         <ListItemText>
+  //           <ScrollIntoView selector="#aboutus" smooth>
+  //             <Typography
+  //               id="#aboutus"
+  //               variant="subtitle2"
+  //               style={{ marginRight: 35, cursor: 'pointer' }}
+  //             >
+  //               <Link href="#aboutus" style={{ color: 'black' }}>
+  //                 About Us
+  //               </Link>
+  //             </Typography>
+  //           </ScrollIntoView>
+  //         </ListItemText>
+  //       </ListItem>
+  //       <Divider />
 
-        <ListItem button>
-          <ListItemText>
-            <ScrollIntoView selector="#influencers" smooth>
-              <Typography
-                variant="subtitle2"
-                style={{ marginRight: 35, cursor: 'pointer' }}
-              >
-                <Link style={{ color: 'black' }}>Influencers</Link>
-              </Typography>
-            </ScrollIntoView>
-          </ListItemText>
-        </ListItem>
-        <Divider />
+  //       <ListItem button>
+  //         <ListItemText>
+  //           <ScrollIntoView selector="#influencers" smooth>
+  //             <Typography
+  //               variant="subtitle2"
+  //               style={{ marginRight: 35, cursor: 'pointer' }}
+  //             >
+  //               <Link style={{ color: 'black' }}>Influencers</Link>
+  //             </Typography>
+  //           </ScrollIntoView>
+  //         </ListItemText>
+  //       </ListItem>
+  //       <Divider />
 
-        <ListItem button>
-          <ListItemText>
-            <ScrollIntoView selector="#brandsagencies" smooth>
-              <Typography
-                variant="subtitle2"
-                style={{ marginRight: 30, cursor: 'pointer' }}
-              >
-                <Link style={{ color: 'black' }}>Brands & Agencies</Link>
-              </Typography>
-            </ScrollIntoView>
-          </ListItemText>
-        </ListItem>
-      </Box>
-    </div>
-  );
+  //       <ListItem button>
+  //         <ListItemText>
+  //           <ScrollIntoView selector="#brandsagencies" smooth>
+  //             <Typography
+  //               variant="subtitle2"
+  //               style={{ marginRight: 30, cursor: 'pointer' }}
+  //             >
+  //               <Link style={{ color: 'black' }}>Brands & Agencies</Link>
+  //             </Typography>
+  //           </ScrollIntoView>
+  //         </ListItemText>
+  //       </ListItem>
+  //     </Box>
+  //   </div>
+  // );
 
   return (
     <div className={classes.root}>
